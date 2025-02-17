@@ -1,0 +1,156 @@
+java com.scott.chat
+├── controller/
+│   ├── ChatController.java         
+│   ├── LoginController.java           
+│   ├── PasswordResetController.java         
+│   ├── TokenController.java          
+│   ├── MemberController.java      
+│   └── UnifiedController.java      (與貼文相關的綜合)
+│
+├── service/
+│   ├── post/
+│   │   ├── PostService.java        // 貼文服務
+│   │   ├── PostPhotoService.java   // 貼文圖片服務
+│   │   └── PostRequestService.java   // 貼文圖片服務
+│   ├── message/
+│   │   ├── MessageService.java     // 留言服務
+│   │   └── MessageBoardService.java // 留言板服務
+│   │ 
+│   ├── comment/   
+│   │   └── CommentService.java // 留言板服務
+│   │ 
+│   │── ChatService.java                               (a組員的聊天室)
+│   │── ImageService.java  
+│   │── MemberService.java                              (b組員的會員登入)
+│   │── CustomUserDetailsService.java                   (b組員的會員登入)
+│   │── EmailService.java                              (b組員的會員登入)
+│   │── TokenService.java 
+│   └── collect/
+│       └── CollectService.java     // 收藏服務
+│
+│
+├── repository/                     // (已存在)
+│   ├── ChatlogRepository.java                         (a組員的聊天室)
+│   ├── ChatroomRepository.java                        (a組員的聊天室)
+│   ├── CollectRepository.java
+│   ├── CommentRepository.java
+│   ├── MemberRepository.java                          (b組員的會員登入)
+│   ├── TokenRepository.java                           (b組員的會員登入)
+│   ├── MessageBoardRepository.java
+│   ├── MessagelogRepository.java
+│   ├── PostLikeRepository.java
+│   ├── PostPhotoRepository.java
+│   ├── TokenRepository.java
+│   └── PostRepository.java
+│
+│
+├── security/                     // (已存在)
+│   ├── CustomAuthenticationFailureHandler.java                         (a組員的聊天室)
+│   ├── CustomAuthenticationSuccessHandler.java                        (a組員的聊天室)
+│   └── OAuth2LoginSuccessHandler.java
+│
+│
+├── model/                         // (已存在)
+│   ├── Chatlog.java                                    (a組員的聊天室)
+│   ├── Chatroom.java                                   (a組員的聊天室)
+│   ├── Collect.java
+│   ├── Comment.java
+│   ├── CustomUserDetails.java                          (b組員的會員登入)
+│   ├── Member.java                                     (b組員的會員登入)
+│   ├── PasswordReset.java                              (b組員的會員登入)
+│   ├── PasswordResetRequest.java                       (b組員的會員登入)
+│   ├── TokenRecord.java                                (b組員的會員登入)
+│   ├── PasswordReset.java
+│   ├── MessageBoard.java
+│   ├── Messagelog.java  
+│   ├── Post.java
+│   ├── PostPhoto.java
+│   ├── PostLike.java
+│   └── Sticker.java                                    (a組員的聊天室)
+│
+├── dto/
+│   ├── post/
+│   │   ├── PostCreateRequest.java
+│   │   ├── PostDTO.java
+│   │   ├── PostResponse.java
+│   │   └── PostUpadateRequest.java
+│   ├── message/
+│   │   ├── MessageDTO.java
+│   │   └── MessageCreateRequest.java
+│   ├── common/
+│   │   └── ApiResponse.java
+│   ├── comment/
+│   │   └── CommentDTO.java
+│   │
+│   └── collect/
+│       └── CollectDTO.java
+│
+├── exception/
+│   ├── FileUploadException.java
+│   ├── InvalidRequestException.java
+│   ├── PostNotFoundException.java
+│   ├── MessageNotFoundException.java
+│   ├── UnauthorizedException.java
+│   └── GlobalExceptionHandler.java
+│
+├── util/
+│   ├── TimeUtils.java
+│   ├── FileUtils.java            // 統一處理檔案上傳
+│   ├── BCrypt.java
+│   └── ValidationUtils.java
+│
+│
+├── ChatApplication.java
+│
+└── config/
+    ├── WebConfig.java
+    ├── CacheConfig.java                           
+    ├── SecurityConfig.java                          (所有組員共同小心更改)
+    ├── SwaggerConfig.java
+    ├── WebSocket.java                               (所有組員共同小心更改)
+    └── commons/
+       └── CustomMultipartResolver.java
+
+
+
+resources
+├── controller/migration/
+│   └── 6個資料庫      // 收藏控制器
+│
+│
+│
+│
+├── static/
+│   ├── css/
+│   │   ├── chat.java               (a組員的聊天室)
+│   │   ├── Page.java               (b組員的會員登入)
+│   │   └──  yurong/    //我的名子
+│   │       └── style.css   // 我的
+│   │     
+│   │ 
+│   │ 
+│   └── js/
+│      ├── chat.java                (a組員的聊天室)
+│      ├── PasswordEye.java         (b組員的會員登入)
+│      └──  yurong/    //我的名子
+│           ├──  api.js    //我的
+│           └──  ui.js   // 我的
+│
+├── templates/
+│   ├── chat.html                       (a組員的聊天室)
+│   ├── forgotPassword.hmtl             (b組員的會員登入)
+│   ├── loginpage.html                  (b組員的會員登入)
+│   ├── main.html                       (b組員的會員登入)
+│   ├── registerpage.html               (b組員的會員登入)
+│   └── home.html                       (登入成功後進入程式的第一頁)
+│
+│
+├── application.properties
+│
+├── application.yml
+│
+├── application-dev.properties
+│
+│
+└── application-prod.properties
+
